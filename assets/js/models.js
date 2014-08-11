@@ -1,0 +1,3 @@
+var models = {
+	tardis: "<pre style='color:blue'><span style='font-size:8px;color:#fff'>.</span>__[ ]__\n[<span style='font-size:8px'>POLICE BOX</span>]\n<span style='font-size:2px;color:#fff'>.</span>|[#][#]|\n<span style='font-size:2px;color:#fff'>.</span>|[<span style='color:lightgrey'>&#9632;</span>][&nbsp;]|\n<span style='font-size:2px;color:#fff'>.</span>|[&nbsp;][&nbsp;]|\n<span style='font-size:2px;color:#fff'>.</span>|[&nbsp;][&nbsp;]|\n<span style='font-size:2px;color:#fff'>.</span>--------</pre>"
+}

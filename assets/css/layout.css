@@ -1,0 +1,55 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*
+html, body, span, h1, canvas, section, table, thead, th, tr, td, tbody {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+:focus {
+	outline :none;
+}
+
+#bitcoin {
+	border: solid 1px #000;
+	display: inline-block;
+	line-height: 18px;
+	margin: 30px;
+	padding-right: 3px
+}
+
+	#bitcoin span {
+		background: #000;
+		color: #fff;
+		line-height: 20px;
+		padding: 1px 3px;
+	}
+
+	.container {
+		height: 10px;
+		background: #eee;
+		width: 200px;
+		display: inline-block;
+	}
+
+.indicator {
+	height: 100%;
+	display: inline-block;
+	background: #8f7a66;
+}
+
+	#hth_ind {
+		background-color: green
+	}

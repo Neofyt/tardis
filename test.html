@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Game</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!--<link rel="stylesheet" type="text/css" href="assets/css/layout.css" />-->
+	</head>
+
+	<body>
+
+	<script>var game = {
+    "jb": 13,
+    "cristal": 1138,
+    "unlocked": [20, 70]
+};
+
+function test() {
+    var list = [];
+    for (var i = 0, j = arguments.length; i < j; i++) {
+        list.push(game[arguments[i]]);
+    }
+    return list;
+}
+
+console.log(test("cristal","unlocked"));</script>
+
+	</body>
+</html>
