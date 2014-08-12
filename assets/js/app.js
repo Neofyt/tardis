@@ -105,6 +105,21 @@ function sub(what, val){
 	}
 }
 
+function addLvl(){
+	set("level", get("level") + 1);
+	displayLevel();
+	setHthLevel();
+	count("hth");
+}
+
+function displayLevel(){
+	level.innerHTML = get("level");
+}
+
+function setHthLevel(){
+	set("hth", levelsMax["hth"][get("level") - 1]);
+}
+
 function count(){
 	 for (var i = 0, j = arguments.length; i < j; i++) {
 		switch(arguments[i]){
@@ -167,7 +182,7 @@ isFirstRun();
 
 msg = messages[get("lang") || "en"];
 
-level.innerHTML = get("level");
+displayLevel();
 
 count("jb","hth");
 add("jb", 1);
