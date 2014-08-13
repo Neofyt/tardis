@@ -5,8 +5,10 @@ var messages = {
 			zero: "{0} cristal temporel",
 			more: "{0} cristaux temporels"
 		},
-		buyTardis: "Acheter un tardis",
-		buyingTardis: "acheter un tardis",
+		buy: "acheter {0}",
+		objects: {
+			tardis: "un tardis"
+		},
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
 		levelUp: "Vous êtes passé au niveau {0} !!"
 	},
@@ -16,8 +18,10 @@ var messages = {
 			zero: "{0} time cristal",
 			more: "{0} time cristals"
 		},
-		buyTardis: "Buy a tardis",
-		buyingTardis: "buying a tardis",
+		buy: "buy {0}",
+		objects: {
+			tardis: "a tardis"
+		},
 		notEnoughJB: "Not enough jelly beans for {0}",
 		levelUp :"You are now level {0} !!"
 	}

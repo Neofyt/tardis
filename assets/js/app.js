@@ -7,7 +7,7 @@ var d = document,
 	v = 0.1,
 	msg,
 	tpl = {
-		action: "<button onclick='action[{0}]();'>{1}</button>"
+		action: "<button id='action_{0}' onclick='action[{0}]();'>{1}</button>"
 	};
 
 
@@ -59,7 +59,7 @@ String.prototype.format = function(){
 	return string;
 };
 
-String.prototype.upperCase = function(){
+String.prototype.cap = function(){
 	return this.charAt(0).toUpperCase() + this.substring(1);
 };
 
@@ -154,14 +154,15 @@ function unlockCheckpoints(){
 	}
 }
 
-function buyTardis(){
-	if(!get("tardis")){
-		if (sub("jb", prices.tardis) !== 0){
-			tardis.innerHTML = models.tardis;
-			set("tardis", true);
+function buy(what, n){
+	if(!get(what)){
+		if (sub("jb", prices[what]) !== 0){
+			$("#"+what).innerHTML = models[what];
+			set(what, true);
 			levelUp();
+			push("done", n);
 		} else {
-			tardis.innerHTML = msg.notEnoughJB.format(msg.buyingTardis);
+			$("#"+what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 		}
 	}
 }
