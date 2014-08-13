@@ -65,25 +65,14 @@ String.prototype.upperCase = function(){
 
 
 // ============
-// INTERFACE
-// ============
-
-function welcome(){
-	console.log(msg.welcome.format(get("pseudo")));
-}
-
-// ============
 // ENGINE
 // ============
-
-function indicateVersion(){
-	version.innerHTML = v;
-}
 
 function changeLang(ln){
 	set("lang", ln);
 	location.reload();
 }
+
 
 // ============
 // GAME
@@ -126,6 +115,7 @@ function setHthMax(){
 
 function displayNotif(info){
 	notif.textContent = info;
+	notif.style.display = "block";
 }
 
 function count(){
@@ -143,7 +133,7 @@ function count(){
 }
 
 function countCristals(){
-	set("cristal", parseInt(get("jb") / jbForOneCristal));
+	set("cristal", parseInt(get("jb") / prices.oneCristal));
 	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
 }
 
@@ -166,7 +156,7 @@ function unlockCheckpoints(){
 
 function buyTardis(){
 	if(!get("tardis")){
-		if (sub("jb", 500) !== 0){
+		if (sub("jb", prices.tardis) !== 0){
 			tardis.innerHTML = models.tardis;
 			set("tardis", true);
 			levelUp();
@@ -198,14 +188,9 @@ add("jb", 1);
 unlockCheckpoints();
 redoActions();
 
-//indicateVersion();
-welcome();
-
 setInterval(function(){
 	add("jb", 1);
 }, 2000);
-
-
 
 window.onbeforeunload = function () {
 	//save();
