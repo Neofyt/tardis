@@ -38,3 +38,15 @@ body {
 	#hth_ind {
 		background-color: green
 	}
+
+#notif {
+	position: fixed;
+	height: 30px;
+	background: green;
+	color: #fff;
+	bottom: 0;
+	min-width: 100px;
+	line-height: 30px;
+	border-radius: 3px;
+	padding: 0 10px;
+}

@@ -109,7 +109,7 @@ function levelUp(){
 	var newLevel = get("level") + 1;
 	if(newLevel <= levelsMax["hth"].length){
 		set("level", newLevel);
-		displayInfo(msg.levelUp.format(get("level")));
+		displayNotif(msg.levelUp.format(get("level")));
 		displayLevel();
 		setHthMax();
 		count("hth");
@@ -124,8 +124,8 @@ function setHthMax(){
 	set("hth", levelsMax["hth"][get("level") - 1]);
 }
 
-function displayInfo(info){
-	infos.textContent = info;
+function displayNotif(info){
+	notif.textContent = info;
 }
 
 function count(){

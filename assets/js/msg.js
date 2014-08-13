@@ -8,7 +8,7 @@ var messages = {
 		buyTardis: "Acheter un tardis",
 		buyingTardis: "acheter un tardis",
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
-		levelUp: "Vous êtes passé au niveau {0}"
+		levelUp: "Vous êtes passé au niveau {0} !!"
 	},
 	en: {
 		welcome: "Welcome {0} !!",
@@ -19,6 +19,6 @@ var messages = {
 		buyTardis: "Buy a tardis",
 		buyingTardis: "buying a tardis",
 		notEnoughJB: "Not enough jelly beans for {0}",
-		levelUp :"You are now level {0}"
+		levelUp :"You are now level {0} !!"
 	}
 };
