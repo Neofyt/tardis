@@ -105,19 +105,27 @@ function sub(what, val){
 	}
 }
 
-function addLvl(){
-	set("level", get("level") + 1);
-	displayLevel();
-	setHthLevel();
-	count("hth");
+function levelUp(){
+	var newLevel = get("level") + 1;
+	if(newLevel <= levelsMax["hth"].length){
+		set("level", newLevel);
+		displayInfo(msg.levelUp.format(get("level")));
+		displayLevel();
+		setHthMax();
+		count("hth");
+	}	
 }
 
 function displayLevel(){
 	level.innerHTML = get("level");
 }
 
-function setHthLevel(){
+function setHthMax(){
 	set("hth", levelsMax["hth"][get("level") - 1]);
+}
+
+function displayInfo(info){
+	infos.textContent = info;
 }
 
 function count(){
@@ -161,6 +169,7 @@ function buyTardis(){
 		if (sub("jb", 500) !== 0){
 			tardis.innerHTML = models.tardis;
 			set("tardis", true);
+			levelUp();
 		} else {
 			tardis.innerHTML = msg.notEnoughJB.format(msg.buyingTardis);
 		}
@@ -190,7 +199,7 @@ unlockCheckpoints();
 redoActions();
 
 //indicateVersion();
-//welcome();
+welcome();
 
 setInterval(function(){
 	add("jb", 1);

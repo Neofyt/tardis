@@ -22,27 +22,12 @@ body {
 	outline :none;
 }
 
-#bitcoin {
-	border: solid 1px #000;
+.container {
+	height: 10px;
+	background: #eee;
+	width: 200px;
 	display: inline-block;
-	line-height: 18px;
-	margin: 30px;
-	padding-right: 3px
 }
-
-	#bitcoin span {
-		background: #000;
-		color: #fff;
-		line-height: 20px;
-		padding: 1px 3px;
-	}
-
-	.container {
-		height: 10px;
-		background: #eee;
-		width: 200px;
-		display: inline-block;
-	}
 
 .indicator {
 	height: 100%;

@@ -3,42 +3,42 @@ function isFirstRun() {
 }
 
 function save() {
-	localStorage.setItem(StorageName, JSON.stringify(Game));
+	localStorage.setItem(StorageName, JSON.stringify(Doctor));
 	load();
 }
 
 function load() {
-	Game = JSON.parse(localStorage.getItem(StorageName));
+	Doctor = JSON.parse(localStorage.getItem(StorageName));
 }
 
 function get(param) {
-	return Game[param];
+	return Doctor[param];
 }
 
 function m_get() {
     var list = [];
     for (var i = 0, j = arguments.length; i < j; i++) {
-        list.push(Game[arguments[i]]);
+        list.push(Doctor[arguments[i]]);
     }
     return list;
 }
 
 function _add(param, val) {
-	Game[param] += val;
+	Doctor[param] += val;
 	save();
 }
 
 function _sub(param, val) {
-	Game[param] -= val;
+	Doctor[param] -= val;
 	save();
 }
 
 function set(param, val) {
-	Game[param] = val;
+	Doctor[param] = val;
 	save();
 }
 
 function push(param, val){
-	Game[param].push(val);
+	Doctor[param].push(val);
 	save();
 }
