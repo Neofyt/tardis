@@ -116,6 +116,7 @@ function setHthMax(){
 function displayNotif(info){
 	notif.textContent = info;
 	notif.style.display = "block";
+	setTimeout(function(){ notif.style.display = "none"; }, 5000);
 }
 
 function count(){
@@ -161,6 +162,7 @@ function buy(what, n){
 			set(what, true);
 			levelUp();
 			push("done", n);
+			$("#action_"+n).style.display = "none";
 		} else {
 			$("#"+what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 		}
