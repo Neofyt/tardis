@@ -51,3 +51,8 @@ body {
 	padding: 0 10px;
 	display: none;
 }
+
+pre {
+	color: blue;
+
+}

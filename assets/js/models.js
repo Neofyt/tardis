@@ -1,3 +1,20 @@
 var models = {
-	tardis: "<pre style='color:blue'><span style='font-size:8px;color:#fff'>.</span>__[ ]__\n[<span style='font-size:8px'>POLICE BOX</span>]\n<span style='font-size:2px;color:#fff'>.</span>|[#][#]|\n<span style='font-size:2px;color:#fff'>.</span>|[<span style='color:lightgrey'>&#9632;</span>][&nbsp;]|\n<span style='font-size:2px;color:#fff'>.</span>|[&nbsp;][&nbsp;]|\n<span style='font-size:2px;color:#fff'>.</span>|[&nbsp;][&nbsp;]|\n<span style='font-size:2px;color:#fff'>.</span>--------</pre>"
+		tardis: ['<pre><span style="font-size:8px;color:#fff">.</span>__[ ]__',
+				'[<span style="font-size:8px">POLICE BOX</span>]',
+				'<span style="font-size:2px;color:#fff">.</span>|[#][#]|',
+				'<span style="font-size:2px;color:#fff">.</span>|[<span style="color:lightgrey">&#9632;</span>][&nbsp;]|',
+				'<span style="font-size:2px;color:#fff">.</span>|[&nbsp;][&nbsp;]|',
+				'<span style="font-size:2px;color:#fff">.</span>|[&nbsp;][&nbsp;]|',
+				'<span style="font-size:2px;color:#fff">.</span>--------</pre>'],
+		dalek: ['<pre><span style="font-size:6px;color:#fff">.....</span>A___A',
+				'<span style="font-size:8px;color:#fff">...</span>/_(☼)_\\',
+				'<span style="font-size:8px;color:#fff">...</span>/#####\\',
+				'<span style="font-size:6px;color:#fff">..</span>/#######\\',
+				'/|O>---<☼|\\',
+				'(|.|.|.|.|)',
+				'(|.|.|.|.|)',
+				'(|.|.|.|.|)',
+				'(|.|.|.|.|)',
+				'|¯¯¯¯¯¯¯¯¯|',
+				' ¯¯¯¯¯¯¯¯¯</pre>']
 }

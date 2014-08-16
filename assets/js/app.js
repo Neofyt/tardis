@@ -158,7 +158,7 @@ function unlockCheckpoints(){
 function buy(what, n){
 	if(!get(what)){
 		if (sub("jb", prices[what]) !== 0){
-			$("#"+what).innerHTML = models[what];
+			$("#"+what).innerHTML = models[what].join('\n');
 			set(what, true);
 			levelUp();
 			push("done", n);
@@ -171,7 +171,8 @@ function buy(what, n){
 
 function redoActions(){
 	if(get("tardis")){
-		tardis.innerHTML = models.tardis;
+		tardis.innerHTML = models.tardis.join('\n');
+		dalek.innerHTML = models.dalek.join('\n');
 	}
 }
 
