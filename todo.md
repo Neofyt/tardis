@@ -1,0 +1,4 @@
+- [x] implement life and jelly beans counters and gestion
+- [x] control the leveling method
+- [x] create a generic method for buying objects
+- [ ] create a method for managing already done action

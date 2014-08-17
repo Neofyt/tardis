@@ -172,8 +172,11 @@ function buy(what, n){
 function redoActions(){
 	if(get("tardis")){
 		tardis.innerHTML = models.tardis.join('\n');
-		dalek.innerHTML = models.dalek.join('\n');
 	}
+}
+
+function displayEnemy(foe){
+	enemy.innerHTML = models[foe].join('\n');
 }
 
 
@@ -188,7 +191,6 @@ msg = messages[get("lang") || "en"];
 displayLevel();
 
 count("jb","hth");
-add("jb", 1);
 unlockCheckpoints();
 redoActions();
 
