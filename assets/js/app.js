@@ -173,10 +173,23 @@ function redoActions(){
 	if(get("tardis")){
 		tardis.innerHTML = models.tardis.join('\n');
 	}
+
+	//var infos = get("done");
+
+	//for (var i = 0, length = infos[1].length; i < length && infos[1][i] < infos[0] ; i++) {
+	//	checkpoints[infos[1][i]]();
+	//}
 }
 
 function displayEnemy(foe){
 	enemy.innerHTML = models[foe].join('\n');
+}
+
+function has(){
+	for (var i = 0, j = arguments.length; i < j; i++) {
+		if(get(arguments[i])){ arguments[i].innerHTML = models[arguments[i]].join('\n'); }
+
+	}
 }
 
 
@@ -192,7 +205,8 @@ displayLevel();
 
 count("jb","hth");
 unlockCheckpoints();
-redoActions();
+//redoActions();
+has("tardis", "k9")
 
 setInterval(function(){
 	add("jb", 1);
