@@ -187,7 +187,7 @@ function displayEnemy(foe){
 
 function has(){
 	for (var i = 0, j = arguments.length; i < j; i++) {
-		if(get(arguments[i])){ arguments[i].innerHTML = models[arguments[i]].join('\n'); }
+		if(get(arguments[i])){ $("#"+arguments[i]).innerHTML = models[arguments[i]].join('\n'); }
 
 	}
 }

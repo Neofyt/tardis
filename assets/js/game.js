@@ -9,7 +9,7 @@ var StorageName = "Doctor",
 		tardis: 500
 	},
 	checkpoints = {
-		500: function(){ actions.innerHTML = tpl.action.format(1, msg.buy.format(msg.objects.tardis).cap()); },
+		500: function(){ if(!get("tardis")){ actions.innerHTML = tpl.action.format(1, msg.buy.format(msg.objects.tardis).cap()); }},
 		70: function(){ console.log(msg.timeCristals.more.format(get("cristal"))); }
 	},
 	action = {
