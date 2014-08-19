@@ -106,7 +106,7 @@ function levelUp(){
 }
 
 function displayLevel(){
-	level.innerHTML = get("level");
+	level.innerHTML = "Level <br />" + get("level");
 }
 
 function setHthMax(){
@@ -160,12 +160,20 @@ function buy(what, n){
 		if (sub("jb", prices[what]) !== 0){
 			$("#"+what).innerHTML = models[what].join('\n');
 			set(what, true);
-			levelUp();
 			push("done", n);
 			$("#action_"+n).style.display = "none";
 		} else {
 			$("#"+what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 		}
+	}
+}
+
+function steal(what, n){
+	if(!get(what)){
+		$("#"+what).innerHTML = models[what].join('\n');
+		set(what, true);
+		push("done", n);
+		$("#action_"+n).style.display = "none";
 	}
 }
 
@@ -188,7 +196,6 @@ function displayEnemy(foe){
 function has(){
 	for (var i = 0, j = arguments.length; i < j; i++) {
 		if(get(arguments[i])){ $("#"+arguments[i]).innerHTML = models[arguments[i]].join('\n'); }
-
 	}
 }
 
@@ -206,7 +213,7 @@ displayLevel();
 count("jb","hth");
 unlockCheckpoints();
 //redoActions();
-has("tardis", "k9")
+has("sonic","tardis", "k9");
 
 setInterval(function(){
 	add("jb", 1);

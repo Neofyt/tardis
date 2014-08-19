@@ -54,5 +54,27 @@ body {
 
 pre {
 	color: blue;
+}
 
+table {
+	border-collapse: collapse;
+	margin-bottom: 30px;
+}
+
+td {
+	padding: 5px;
+	border: dotted 1px #ccc;
+}
+
+.bl { border-left: 0; }
+.br { border-right: 0; }
+
+.ra { text-align: right; }
+
+#level {
+	text-align: center;
+}
+
+#sonic {
+	font-size: 6px;
 }

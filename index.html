@@ -6,7 +6,7 @@
 	</head>
 	<body>
 
-	<a href="#" onclick="changeLang('fr');">Fr</a>
+	<!--<a href="#" onclick="changeLang('fr');">Fr</a>
 	<a href="#" onclick="changeLang('en');">En</a>
 
 	<a href="#" onclick="sub('jb',100);">- 100 jb</a>
@@ -15,31 +15,53 @@
 	<a href="#" onclick="sub('hth',10);">- 10 hth</a>
 	<a href="#" onclick="add('hth',10);">+ 10 hth</a>
 
-	<a href="#" onclick="levelUp();">Level up</a>
+	<a href="#" onclick="levelUp();">Level up</a>-->
 
 	<table>
-		<tr>
-			<td rowspan="2" id="level"></td>
-			<td id="hth"></td>
-			<td>
-				<span class="container">
-					<span class="indicator" id="hth_ind"></span>
-				</span>
-			</td>
-		</tr><tr>
-			<td id="jb"></td>
-			<td>
-				<span class="container">
-					<span class="indicator" id="jb_ind"></span>
-				</span>
-			</td>
-		</tr>
+		<thead>
+			<tr>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2" id="level"></td>
+				<td class="br ra">Health :</td>
+				<td id="hth" class="br bl"></td>
+				<td class="bl">
+					<span class="container">
+						<span class="indicator" id="hth_ind"></span>
+					</span>
+				</td>
+			</tr><tr>
+				<td class="br ra">Jelly beans :</td>
+				<td id="jb" class="br bl"></td>
+				<td class="bl">
+					<span class="container">
+						<span class="indicator" id="jb_ind"></span>
+					</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table id="inventory">
+		<thead>
+			<tr>
+				<th>Inventory</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td id="sonic"></td>
+				<td id="tardis"></td>
+				<td id="k9"></td>
+			</tr>
+		</tbody>
 	</table>
 
 	<p id="cristals"></p>
 	<p id="actions"></p>
-	<p id="tardis"></p>
-	<p id="k9"></p>
 	<p id="enemy"></p>
 	<p id="notif"></p>
 
