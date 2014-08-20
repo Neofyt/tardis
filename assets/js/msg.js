@@ -25,7 +25,7 @@ var messages = {
 		steal: "steal {0}",
 		objects: {
 			tardis: "a tardis",
-			sonic "a sonic screwdriver"
+			sonic: "a sonic screwdriver"
 		},
 		notEnoughJB: "Not enough jelly beans for {0}",
 		levelUp :"You are now level {0} !!"
