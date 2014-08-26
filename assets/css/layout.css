@@ -78,3 +78,7 @@ td {
 #sonic {
 	font-size: 6px;
 }
+
+#inventory td:empty {
+	display: none;
+}

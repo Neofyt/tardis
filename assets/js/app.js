@@ -79,7 +79,7 @@ function changeLang(ln){
 // ============
 
 function add(what, val){
-	if(get(what) < levelsMax[what][get("level") - 1]){
+	if(get(what) < levelsMax[what][get("lvl") - 1]){
 		_add(what, val);
 		count(what);
 	}
@@ -95,22 +95,23 @@ function sub(what, val){
 }
 
 function levelUp(){
-	var newLevel = get("level") + 1;
+	var newLevel = get("lvl") + 1;
 	if(newLevel <= levelsMax["hth"].length){
-		set("level", newLevel);
-		displayNotif(msg.levelUp.format(get("level")));
+		set("lvl", newLevel);
+		displayNotif(msg.levelUp.format(get("lvl")));
 		displayLevel();
 		setHthMax();
 		count("hth");
 	}	
 }
 
-function displayLevel(){
-	level.innerHTML = "Level <br />" + get("level");
-}
 
-function setHthMax(){
-	set("hth", levelsMax["hth"][get("level") - 1]);
+// ============
+// DISPLAY
+// ============
+
+function displayLevel(){
+	level.innerHTML = "Level <br />" + get("lvl");
 }
 
 function displayNotif(info){
@@ -119,24 +120,19 @@ function displayNotif(info){
 	setTimeout(function(){ notif.style.display = "none"; }, 5000);
 }
 
-function count(){
-	 for (var i = 0, j = arguments.length; i < j; i++) {
-		switch(arguments[i]){
-			case "jb": 
-				countCristals();
-				checkCheckpoints();
-				break;
-		}
-		var infos = m_get(arguments[i], "level");
-		$("#" + arguments[i]).innerHTML = infos[0];
-		$("#" + arguments[i] + "_ind").style.width = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1] + "%";
-    }
+function displayEnemy(foe){
+	enemy.innerHTML = models[foe].join('\n');
 }
 
-function countCristals(){
-	set("cristal", parseInt(get("jb") / prices.oneCristal));
-	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
+function displayInventory(){
+	for (var prop in Doctor.obj){
+		if (Doctor.obj[prop]){ $("#" + prop).innerHTML = models[prop].join('\n'); };
+	}
 }
+
+// ============
+// CHECKPOINTS
+// ============
 
 function checkCheckpoints(){
 	var infos = m_get("jb", "unlocked");
@@ -155,13 +151,18 @@ function unlockCheckpoints(){
 	}
 }
 
+
+// ============
+// ACTIONS
+// ============
+
 function buy(what, n){
 	if(!get(what)){
 		if (sub("jb", prices[what]) !== 0){
-			$("#"+what).innerHTML = models[what].join('\n');
+			$("#" + what).innerHTML = models[what].join('\n');
 			set(what, true);
 			push("done", n);
-			$("#action_"+n).style.display = "none";
+			$("#action_" + n).style.display = "none";
 		} else {
 			$("#"+what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 		}
@@ -170,11 +171,39 @@ function buy(what, n){
 
 function steal(what, n){
 	if(!get(what)){
-		$("#"+what).innerHTML = models[what].join('\n');
+		$("#" + what).innerHTML = models[what].join('\n');
 		set(what, true);
 		push("done", n);
-		$("#action_"+n).style.display = "none";
+		$("#action_" + n).style.display = "none";
 	}
+}
+
+
+// ============
+// OTHER
+// ============
+
+function setHthMax(){
+	set("hth", levelsMax["hth"][get("lvl") - 1]);
+}
+
+function count(){
+	 for (var i = 0, j = arguments.length; i < j; i++) {
+		switch(arguments[i]){
+			case "jb": 
+				countCristals();
+				checkCheckpoints();
+				break;
+		}
+		var infos = m_get(arguments[i], "lvl");
+		$("#" + arguments[i]).innerHTML = infos[0];
+		$("#" + arguments[i] + "_ind").style.width = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1] + "%";
+    }
+}
+
+function countCristals(){
+	set("cristal", parseInt(get("jb") / prices.oneCristal));
+	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
 }
 
 function redoActions(){
@@ -189,15 +218,9 @@ function redoActions(){
 	//}
 }
 
-function displayEnemy(foe){
-	enemy.innerHTML = models[foe].join('\n');
-}
 
-function has(){
-	for (var i = 0, j = arguments.length; i < j; i++) {
-		if(get(arguments[i])){ $("#"+arguments[i]).innerHTML = models[arguments[i]].join('\n'); }
-	}
-}
+
+
 
 
 // ===================
@@ -213,7 +236,9 @@ displayLevel();
 count("jb","hth");
 unlockCheckpoints();
 //redoActions();
-has("sonic","tardis", "k9");
+
+displayInventory();
+
 
 setInterval(function(){
 	add("jb", 1);

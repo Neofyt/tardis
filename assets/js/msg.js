@@ -13,7 +13,10 @@ var messages = {
 		},
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
 		levelUp: "Vous êtes passé au niveau {0} !!",
-
+		dialog: {
+			1: "",
+			2: ""
+		}
 	},
 	en: {
 		welcome: "Welcome {0} !!",
