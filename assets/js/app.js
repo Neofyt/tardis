@@ -159,8 +159,8 @@ function unlockCheckpoints(){
 function buy(what, n){
 	if(!get(what)){
 		if (sub("jb", prices[what]) !== 0){
-			$("#" + what).innerHTML = models[what].join('\n');
-			set(what, true);
+			inv(what);
+			displayInventory();
 			push("done", n);
 			$("#action_" + n).style.display = "none";
 		} else {
@@ -171,8 +171,8 @@ function buy(what, n){
 
 function steal(what, n){
 	if(!get(what)){
-		$("#" + what).innerHTML = models[what].join('\n');
-		set(what, true);
+		inv(what);
+		displayInventory();
 		push("done", n);
 		$("#action_" + n).style.display = "none";
 	}

@@ -42,3 +42,8 @@ function push(param, val){
 	Doctor[param].push(val);
 	save();
 }
+
+function inv(object){
+	Doctor.obj[object] = true;
+	save();
+}
