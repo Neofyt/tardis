@@ -11,6 +11,11 @@ function load() {
 	Doctor = JSON.parse(localStorage.getItem(StorageName));
 }
 
+function reset(){
+	localStorage.removeItem(StorageName);
+	location.reload();
+}
+
 function get(param) {
 	return Doctor[param];
 }
@@ -45,5 +50,10 @@ function push(param, val){
 
 function inv(object){
 	Doctor.obj[object] = true;
+	save();
+}
+
+function lost(object){
+	Doctor.obj[object] = false;
 	save();
 }
