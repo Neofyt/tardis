@@ -40,12 +40,21 @@ function list(object){
 	return list;
 }
 
+
+// ============
+// PROTOTYPES
+// ============
+
 Array.prototype.has = function(v){
 	for (var i = 0, length = this.length; i < length; i++) {
 		if (this[i] == v) return true;
 	}
 	return false;
 };
+
+Array.prototype.rdm = function(){
+	return this[Math.floor(Math.random() * this.length)];
+}
 
 Number.prototype.between = function(min, max){
 	return ((this >= min) && (this < max));
@@ -126,8 +135,14 @@ function displayEnemy(foe){
 
 function displayInventory(){
 	for (var prop in Doctor.obj){
-		if (Doctor.obj[prop]){ $("#" + prop).innerHTML = models[prop].join('\n'); };
+		if (Doctor.obj[prop]){ 
+			$("#" + prop).innerHTML = models[prop].join('\n');
+		};
 	}
+}
+
+function displayCristals(){
+	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
 }
 
 // ============
@@ -136,7 +151,7 @@ function displayInventory(){
 
 function checkCheckpoints(){
 	var infos = m_get("jb", "unlocked");
-	
+
 	if (list(checkpoints).has(infos[0])){
 		checkpoints[infos[0]]();
 		if(!infos[1].has(infos[0])){ push("unlocked", infos[0]); }
@@ -159,21 +174,23 @@ function unlockCheckpoints(){
 function buy(what, n){
 	if(!get(what)){
 		if (sub("jb", prices[what]) !== 0){
-			inv(what);
-			displayInventory();
-			push("done", n);
-			$("#action_" + n).style.display = "none";
+			//inv(what);
+			//displayInventory();
+			//push("done", n);
+			_add(what, +1);
+			displayCristals();
+			//$("#action_" + n).style.display = "none";
 		} else {
-			$("#"+what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
+			$("#" + what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 		}
 	}
 }
 
-function steal(what, n){
+function obtain(what, n){
 	if(!get(what)){
 		inv(what);
 		displayInventory();
-		push("done", n);
+		//push("done", n);
 		$("#action_" + n).style.display = "none";
 	}
 }
@@ -199,11 +216,6 @@ function count(){
 		$("#" + arguments[i]).innerHTML = infos[0];
 		$("#" + arguments[i] + "_ind").style.width = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1] + "%";
     }
-}
-
-function countCristals(){
-	set("cristal", parseInt(get("jb") / prices.oneCristal));
-	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
 }
 
 function redoActions(){

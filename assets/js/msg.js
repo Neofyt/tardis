@@ -9,7 +9,8 @@ var messages = {
 		steal: "voler {0}",
 		objects: {
 			tardis: "un tardis",
-			sonic: "un tournevis sonique"
+			sonic: "un tournevis sonique",
+			cristal: "un cristal temporel"
 		},
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
 		levelUp: "Vous êtes passé au niveau {0} !!",
@@ -28,7 +29,8 @@ var messages = {
 		steal: "steal {0}",
 		objects: {
 			tardis: "a tardis",
-			sonic: "a sonic screwdriver"
+			sonic: "a sonic screwdriver",
+			cristal: "a time cristal"
 		},
 		notEnoughJB: "Not enough jelly beans for {0}",
 		levelUp :"You are now level {0} !!"
