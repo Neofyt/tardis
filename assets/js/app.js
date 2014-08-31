@@ -171,18 +171,14 @@ function unlockCheckpoints(){
 // ACTIONS
 // ============
 
-function buy(what, n){
-	if(!get(what)){
-		if (sub("jb", prices[what]) !== 0){
-			//inv(what);
-			//displayInventory();
-			//push("done", n);
-			_add(what, +1);
-			displayCristals();
-			//$("#action_" + n).style.display = "none";
-		} else {
-			$("#" + what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
-		}
+function buy(what, n){ 
+	if (sub("jb", prices[what]) !== 0){
+		//push("done", n);
+		_add(what, +1);
+		displayCristals();
+		//$("#action_" + n).style.display = "none";
+	} else {
+		//$("#" + what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 	}
 }
 
@@ -208,7 +204,7 @@ function count(){
 	 for (var i = 0, j = arguments.length; i < j; i++) {
 		switch(arguments[i]){
 			case "jb": 
-				countCristals();
+				displayCristals();
 				checkCheckpoints();
 				break;
 		}
@@ -255,7 +251,3 @@ displayInventory();
 setInterval(function(){
 	add("jb", 1);
 }, 2000);
-
-window.onbeforeunload = function () {
-	//save();
-};
