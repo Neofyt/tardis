@@ -1,5 +1,5 @@
 var models = {
-		tardis: ['<pre onclick="console.log(planets.rdm());"><span style="font-size:8px"> </span>__[ ]__',
+		tardis: ['<pre onclick="console.log(planets.rdm());" title="Embark in the TARDIS..."><span style="font-size:8px"> </span>__[ ]__',
 				'[<span style="font-size:8px">POLICE BOX</span>]',
 				'<span style="font-size:2px"> </span>|[#][#]|',
 				'<span style="font-size:2px"> </span>|[<span style="color:lightgrey">&#9632;</span>][&nbsp;]|',

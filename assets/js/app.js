@@ -145,6 +145,15 @@ function displayCristals(){
 	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
 }
 
+function displayStory(msg){
+
+	var span = document.createElement("span");
+		span.innerHTML = "<br />" + msg,
+		story = document.getElementById("story");
+
+	story.appendChild(span);
+}
+
 // ============
 // CHECKPOINTS
 // ============

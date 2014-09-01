@@ -4,3 +4,7 @@
 	- [x] buying objects
 	- [x] stealing objects 
 - [ ] create a method for managing already done action
+- [ ] create stories
+	- [ ] planets
+	- [ ] enemies
+	- [ ] dialogs

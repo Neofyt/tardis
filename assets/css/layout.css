@@ -54,6 +54,7 @@ body {
 
 pre {
 	color: blue;
+	cursor: pointer;
 }
 
 table {
