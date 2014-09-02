@@ -180,9 +180,9 @@ function unlockCheckpoints(){
 // ACTIONS
 // ============
 
-function buy(what, n){ 
-	if (sub("jb", prices[what]) !== 0){
-		_add(what, +1);
+function buy(what, f, n){ 
+	if (sub("jb", (f||1) * prices[what]) !== 0){
+		_add(what, 1 * (f||1));
 		displayCristals();
 		//$("#action_" + n).style.display = "none";
 		if(n){ push("done", n); };
