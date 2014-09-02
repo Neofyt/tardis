@@ -6,13 +6,15 @@ var StorageName = "Doctor",
 	},
 	planets = ["Hearth","Trenzalore","Gallifrey","Skaro"],
 	prices = {
-		cristal: 256
+		oneCristal: 256,
+		tenCristals: 2560
 	},
 	checkpoints = {
 		10: function(){ if(!Doctor.obj["tardis"]){ actions.innerHTML = tpl.action.format(1, msg.steal.format(msg.objects.tardis).cap()); }},
 		256: function(){ buyCristals.innerHTML = tpl.action.format(2, msg.buy.format(msg.objects.cristal).cap()); }
+		2560: function(){ buyCristals.innerHTML = tpl.action.format(3, msg.buy.format(msg.objects.tenCristals).cap()); }
 	},
 	action = {
-		1: function(){ obtain("tardis", 1); },
-		2: function(){ buy("cristal", 2); }
+		1: function(){ obtain("tardis"); },
+		2: function(){ buy("cristal"); }
 	};

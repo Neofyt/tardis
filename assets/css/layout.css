@@ -83,3 +83,7 @@ td {
 #inventory td:empty {
 	display: none;
 }
+
+#story span {
+	line-height: 20px;
+}

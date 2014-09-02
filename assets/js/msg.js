@@ -10,14 +10,11 @@ var messages = {
 		objects: {
 			tardis: "un tardis",
 			sonic: "un tournevis sonique",
-			cristal: "un cristal temporel"
+			cristal: "un cristal temporel",
+			tenCristals: "10 cristaux temporels"
 		},
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
-		levelUp: "Vous êtes passé au niveau {0} !!",
-		dialog: {
-			1: "",
-			2: ""
-		}
+		levelUp: "Vous êtes passé au niveau {0} !!"
 	},
 	en: {
 		welcome: "Welcome {0} !!",
@@ -30,7 +27,8 @@ var messages = {
 		objects: {
 			tardis: "a tardis",
 			sonic: "a sonic screwdriver",
-			cristal: "a time cristal"
+			cristal: "a time cristal",
+			tenCristals: "10 time cristals"
 		},
 		notEnoughJB: "Not enough jelly beans for {0}",
 		levelUp :"You are now level {0} !!"

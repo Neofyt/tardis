@@ -147,9 +147,9 @@ function displayCristals(){
 
 function displayStory(msg){
 
-	var span = document.createElement("span");
+	var span = d.createElement("span");
 		span.innerHTML = "<br />" + msg,
-		story = document.getElementById("story");
+		story = d.getElementById("story");
 
 	story.appendChild(span);
 }
@@ -182,10 +182,10 @@ function unlockCheckpoints(){
 
 function buy(what, n){ 
 	if (sub("jb", prices[what]) !== 0){
-		//push("done", n);
 		_add(what, +1);
 		displayCristals();
 		//$("#action_" + n).style.display = "none";
+		if(n){ push("done", n); };
 	} else {
 		//$("#" + what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 	}
@@ -195,7 +195,7 @@ function obtain(what, n){
 	if(!get(what)){
 		inv(what);
 		displayInventory();
-		//push("done", n);
+		if(n){ push("done", n); };
 		$("#action_" + n).style.display = "none";
 	}
 }
