@@ -211,15 +211,23 @@ function setHthMax(){
 
 function count(){
 	 for (var i = 0, j = arguments.length; i < j; i++) {
+		var infos = m_get(arguments[i], "lvl");
+		$("#" + arguments[i]).innerHTML = infos[0];
+
+		var value = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1]
+		$("#" + arguments[i] + "_ind").style.width = value + "%";
+
 		switch(arguments[i]){
 			case "jb": 
 				displayCristals();
 				checkCheckpoints();
 				break;
+			case "hth":
+				if (value.between(0, 33)){ $("#hth_ind").style.backgroundColor = "red"; }
+				if (value.between(33, 66)){ $("#hth_ind").style.backgroundColor = "orange"; }
+				if (value.between(66, 100)){ $("#hth_ind").style.backgroundColor = "green"; }
+				break;
 		}
-		var infos = m_get(arguments[i], "lvl");
-		$("#" + arguments[i]).innerHTML = infos[0];
-		$("#" + arguments[i] + "_ind").style.width = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1] + "%";
     }
 }
 
