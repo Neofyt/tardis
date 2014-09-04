@@ -214,7 +214,7 @@ function count(){
 		var infos = m_get(arguments[i], "lvl");
 		$("#" + arguments[i]).innerHTML = infos[0];
 
-		var value = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1]
+		var value = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1];
 		$("#" + arguments[i] + "_ind").style.width = value + "%";
 
 		switch(arguments[i]){

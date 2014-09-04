@@ -1,10 +1,12 @@
 - [x] implement life and jelly beans counters and gestion
 - [x] control the leveling method
 - [x] create generic methods for:
-	- [x] buying objects
-	- [x] stealing objects 
+	- [x] buying one or several objects
+	- [x] obtaining objects 
 - [ ] create a method for managing already done action
 - [ ] create stories
 	- [ ] planets
 	- [ ] enemies
 	- [ ] dialogs
+- [ ] activate/inactivate buttons based on jb levels
+- [ ] create separated buttons for buying 1 or 10 cristals
