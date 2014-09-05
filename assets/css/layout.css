@@ -83,3 +83,17 @@ td {
 #story span {
 	line-height: 20px;
 }
+
+button {
+	background: #fff;
+	border: solid 1px #558ed5;
+	color: #558ed5;
+	border-radius: 3px;
+	padding: 2px 5px;
+	cursor: pointer;
+}
+
+	button:hover {
+		background: #558ed5;
+		color: #fff;
+	}

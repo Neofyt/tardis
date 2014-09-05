@@ -142,7 +142,8 @@ function displayInventory(){
 }
 
 function displayCristals(){
-	cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
+	//cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
+	cr.innerHTML = get("cristal");
 }
 
 function displayStory(msg){
@@ -184,10 +185,7 @@ function buy(what, f, n){
 	if (sub("jb", (f||1) * prices[what]) !== 0){
 		_add(what, 1 * (f||1));
 		displayCristals();
-		//$("#action_" + n).style.display = "none";
 		if(n){ push("done", n); };
-	} else {
-		//$("#" + what).innerHTML = msg.notEnoughJB.format(msg.buy.format(msg.object[what]));
 	}
 }
 
