@@ -35,6 +35,10 @@ body {
 	background: #8f7a66;
 }
 
+	#hth_ind {
+		background: green;	
+	}
+
 #notif {
 	position: fixed;
 	height: 30px;
@@ -88,12 +92,17 @@ button {
 	background: #fff;
 	border: solid 1px #558ed5;
 	color: #558ed5;
-	border-radius: 3px;
-	padding: 2px 5px;
+	padding: 1px 3px;
 	cursor: pointer;
 }
 
 	button:hover {
 		background: #558ed5;
 		color: #fff;
+	}
+
+	:disabled {
+		border-color: #ccc;
+		color: #ccc;
+		pointer-events: none;
 	}

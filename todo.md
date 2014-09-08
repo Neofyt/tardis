@@ -9,4 +9,6 @@
 	- [ ] enemies
 	- [ ] dialogs
 - [ ] activate/inactivate buttons based on jb levels
-- [ ] create separated buttons for buying 1 or 10 cristals
+	- [x] activate
+	- [ ] inactivate when jb below the checkpoints
+- [x] create separated buttons for buying 1 or 10 cristals

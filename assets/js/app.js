@@ -142,7 +142,6 @@ function displayInventory(){
 }
 
 function displayCristals(){
-	//cristals.innerHTML = (get("cristal") < 2) ? msg.timeCristals.zero.format(get("cristal")) : msg.timeCristals.more.format(get("cristal"));
 	cr.innerHTML = get("cristal");
 }
 
@@ -230,10 +229,6 @@ function count(){
 }
 
 function redoActions(){
-	if(get("tardis")){
-		tardis.innerHTML = models.tardis.join('\n');
-	}
-
 	//var infos = get("done");
 
 	//for (var i = 0, length = infos[1].length; i < length && infos[1][i] < infos[0] ; i++) {
