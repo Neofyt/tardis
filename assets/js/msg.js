@@ -14,7 +14,10 @@ var messages = {
 			tenCristals: "10 cristaux temporels"
 		},
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
-		levelUp: "Vous êtes passé au niveau {0} !!"
+		levelUp: "Vous êtes passé au niveau {0} !!",
+		planets: {
+			foe: "You have just encountered some {0} !!"
+		}
 	},
 	en: {
 		welcome: "Welcome {0} !!",
@@ -31,6 +34,9 @@ var messages = {
 			tenCristals: "10 time cristals"
 		},
 		notEnoughJB: "Not enough jelly beans for {0}",
-		levelUp :"You are now level {0} !!"
+		levelUp :"You are now level {0} !!",
+		planets: {
+			foe: "You have just encountered some {0} !!"
+		}
 	}
 };
