@@ -9,6 +9,11 @@ var d = document,
 	tpl = {
 		action: "<button id='action_{0}' onclick='action[{0}]();'>{1}</button>"
 	};
+	w.currentEnemy = {
+		foe : "",
+		hth : 0,
+		lost : false
+	};
 
 
 
@@ -114,6 +119,14 @@ function levelUp(){
 	}	
 }
 
+function attack(){
+	if(!w.currentEnemy.lost){
+		w.currentEnemy.hth = w.currentEnemy.hth - 10;
+		if (w.currentEnemy.hth === 0){ w.currentEnemy.lost = true; }
+	}
+	console.log(w.currentEnemy.lost);
+}
+
 
 // ============
 // DISPLAY
@@ -131,6 +144,10 @@ function displayNotif(info){
 
 function displayEnemy(foe){
 	enemy.innerHTML = models[foe].join('\n');
+
+	w.currentEnemy.foe = foe;
+	w.currentEnemy.hth = enemies[foe];
+	w.currentEnemy.lost = false;
 }
 
 function displayInventory(){

@@ -12,3 +12,4 @@
 	- [x] activate
 	- [ ] inactivate when jb below the checkpoints
 - [x] create separated buttons for buying 1 or 10 cristals
+- [ ] combats
