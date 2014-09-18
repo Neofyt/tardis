@@ -121,10 +121,13 @@ function levelUp(){
 
 function attack(){
 	if(!w.currentEnemy.lost){
-		w.currentEnemy.hth = w.currentEnemy.hth - 10;
-		if (w.currentEnemy.hth === 0){ w.currentEnemy.lost = true; }
+		w.currentEnemy.hth = w.currentEnemy.hth - (10 * get("atk"));
+		if (w.currentEnemy.hth <= 0){ 
+			w.currentEnemy.lost = true;
+			button_attack.disabled = true;
+		}
 	}
-	console.log(w.currentEnemy.lost);
+	console.log(w.currentEnemy.hth, w.currentEnemy.lost);
 }
 
 
@@ -148,13 +151,15 @@ function displayEnemy(foe){
 	w.currentEnemy.foe = foe;
 	w.currentEnemy.hth = enemies[foe];
 	w.currentEnemy.lost = false;
+
+	button_attack.disabled = false;
 }
 
 function displayInventory(){
 	for (var prop in Doctor.obj){
 		if (Doctor.obj[prop]){ 
 			$("#" + prop).innerHTML = models[prop].join('\n');
-		};
+		}
 	}
 }
 
@@ -165,8 +170,7 @@ function displayCristals(){
 function displayStory(msg){
 
 	var span = d.createElement("span");
-		span.innerHTML = "<br />" + msg,
-		story = d.getElementById("story");
+		span.innerHTML = "<br />" + msg;
 
 	story.appendChild(span);
 }
@@ -209,8 +213,8 @@ function obtain(what, n){
 	if(!get(what)){
 		inv(what);
 		displayInventory();
-		if(n){ push("done", n); };
 		$("#action_" + n).style.display = "none";
+		if(n){ push("done", n); };
 	}
 }
 
