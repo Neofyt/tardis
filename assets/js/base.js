@@ -33,6 +33,10 @@ function _add(param, val) {
 	save();
 }
 
+function t_sub(param, val) {
+	return Doctor[param] -= val;
+}
+
 function _sub(param, val) {
 	Doctor[param] -= val;
 	save();

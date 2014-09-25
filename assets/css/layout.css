@@ -35,9 +35,8 @@ body {
 	background: #8f7a66;
 }
 
-	#hth_ind {
-		background: green;	
-	}
+	#hth_ind { background: green; }
+	#foe_hth_ind { background: red; }
 
 #notif {
 	position: fixed;

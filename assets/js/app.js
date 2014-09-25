@@ -122,6 +122,7 @@ function levelUp(){
 function attack(){
 	if(!w.currentEnemy.lost){
 		w.currentEnemy.hth = w.currentEnemy.hth - (10 * get("atk"));
+		displayEnemyHth(w.currentEnemy.foe);
 		if (w.currentEnemy.hth <= 0){ 
 			w.currentEnemy.lost = true;
 			button_attack.disabled = true;
@@ -153,6 +154,11 @@ function displayEnemy(foe){
 	w.currentEnemy.lost = false;
 
 	button_attack.disabled = false;
+	displayEnemyHth(foe);
+}
+
+function displayEnemyHth(foe){
+	$("#foe_hth_ind").style.width = ((w.currentEnemy.hth * 100) / enemies[foe]) + "%";
 }
 
 function displayInventory(){
@@ -203,6 +209,7 @@ function unlockCheckpoints(){
 
 function buy(what, f, n){ 
 	if (sub("jb", (f||1) * prices[what]) !== 0){
+		console.log(1);
 		_add(what, 1 * (f||1));
 		displayCristals();
 		if(n){ push("done", n); };
