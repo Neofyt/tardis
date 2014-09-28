@@ -105,3 +105,7 @@ button {
 		color: #ccc;
 		pointer-events: none;
 	}
+
+#enemy_hth {
+	display: none;
+}

@@ -147,7 +147,8 @@ function displayNotif(info){
 }
 
 function displayEnemy(foe){
-	enemy.innerHTML = models[foe].join('\n');
+	enemy_img.innerHTML = models[foe].join('\n');
+	enemy_hth.style.display = "block";
 
 	w.currentEnemy.foe = foe;
 	w.currentEnemy.hth = enemies[foe];
@@ -174,7 +175,6 @@ function displayCristals(){
 }
 
 function displayStory(msg){
-
 	var span = d.createElement("span");
 		span.innerHTML = "<br />" + msg;
 
