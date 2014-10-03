@@ -25,7 +25,7 @@ function $(expr){ return d.querySelector(expr); }
 
 function first(object){
 	for (var key in object) return key;
-};
+}
 
 function last(object){
 	var lastKey = "";
@@ -35,7 +35,7 @@ function last(object){
 	    }
 	}
 	return lastKey;
-};
+}
 
 function list(object){
 	var list = [];
@@ -59,7 +59,7 @@ Array.prototype.has = function(v){
 
 Array.prototype.rdm = function(){
 	return this[Math.floor(Math.random() * this.length)];
-}
+};
 
 Number.prototype.between = function(min, max){
 	return ((this >= min) && (this < max));
@@ -93,14 +93,14 @@ function changeLang(ln){
 // ============
 
 function add(what, val){
-	if(get(what) < levelsMax[what][get("lvl") - 1]){
+	if (get(what) < levelsMax[what][get("lvl") - 1]){
 		_add(what, val);
 		count(what);
 	}
 }
 
 function sub(what, val){
-	if(get(what) >= val){
+	if (get(what) >= val){
 		_sub(what, val);
 		count(what);
 	} else {
@@ -110,17 +110,18 @@ function sub(what, val){
 
 function levelUp(){
 	var newLevel = get("lvl") + 1;
-	if(newLevel <= levelsMax["hth"].length){
+	if (newLevel <= levelsMax["hth"].length){
 		set("lvl", newLevel);
 		displayNotif(msg.levelUp.format(get("lvl")));
 		displayLevel();
-		setHthMax();
-		count("hth");
-	}	
+		set("hth", levelsMax["hth"][newLevel - 1]);
+		set("atk", levelsMax["atk"][newLevel - 1]);
+		count();
+	}
 }
 
 function attack(){
-	if(!w.currentEnemy.lost){
+	if (!w.currentEnemy.lost){
 		w.currentEnemy.hth = w.currentEnemy.hth - (10 * get("atk"));
 		displayEnemyHth(w.currentEnemy.foe);
 		if (w.currentEnemy.hth <= 0){ 
@@ -190,7 +191,7 @@ function checkCheckpoints(){
 
 	if (list(checkpoints).has(infos[0])){
 		checkpoints[infos[0]]();
-		if(!infos[1].has(infos[0])){ push("unlocked", infos[0]); }
+		if (!infos[1].has(infos[0])){ push("unlocked", infos[0]); }
 	}
 }
 
@@ -209,7 +210,6 @@ function unlockCheckpoints(){
 
 function buy(what, f, n){ 
 	if (sub("jb", (f||1) * prices[what]) !== 0){
-		console.log(1);
 		_add(what, 1 * (f||1));
 		displayCristals();
 		if(n){ push("done", n); };
@@ -230,19 +230,16 @@ function obtain(what, n){
 // OTHER
 // ============
 
-function setHthMax(){
-	set("hth", levelsMax["hth"][get("lvl") - 1]);
-}
-
 function count(){
-	 for (var i = 0, j = arguments.length; i < j; i++) {
-		var infos = m_get(arguments[i], "lvl");
-		$("#" + arguments[i]).innerHTML = infos[0];
+	var args = (arguments.length >= 1) ? arguments : ["jb","hth"];
+	for (var i = 0, j = args.length; i < j; i++){
+		var infos = m_get(args[i], "lvl");
+		$("#" + args[i]).innerHTML = infos[0];
 
-		var value = (infos[0] * 100) / levelsMax[arguments[i]][infos[1] - 1];
-		$("#" + arguments[i] + "_ind").style.width = value + "%";
+		var value = (infos[0] * 100) / levelsMax[args[i]][infos[1] - 1];
+		$("#" + args[i] + "_ind").style.width = value + "%";
 
-		switch(arguments[i]){
+		switch(args[i]){
 			case "jb": 
 				displayCristals();
 				checkCheckpoints();
@@ -279,7 +276,7 @@ msg = messages[get("lang") || "en"];
 
 displayLevel();
 
-count("jb","hth");
+count();
 unlockCheckpoints();
 //redoActions();
 
