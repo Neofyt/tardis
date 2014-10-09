@@ -123,7 +123,7 @@ function levelUp(){
 function attack(){
 	if (!w.currentEnemy.lost){
 		w.currentEnemy.hth = w.currentEnemy.hth - (10 * get("atk"));
-		displayEnemyHth(w.currentEnemy.foe);
+		displayEnemyHth();
 		if (w.currentEnemy.hth <= 0){ 
 			w.currentEnemy.lost = true;
 			button_attack.disabled = true;
@@ -156,11 +156,11 @@ function displayEnemy(foe){
 	w.currentEnemy.lost = false;
 
 	button_attack.disabled = false;
-	displayEnemyHth(foe);
+	displayEnemyHth();
 }
 
-function displayEnemyHth(foe){
-	$("#foe_hth_ind").style.width = ((w.currentEnemy.hth * 100) / enemies[foe]) + "%";
+function displayEnemyHth(){
+	$("#foe_hth_ind").style.width = ((w.currentEnemy.hth * 100) / enemies[w.currentEnemy.foe]) + "%";
 }
 
 function displayInventory(){
