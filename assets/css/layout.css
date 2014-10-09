@@ -41,7 +41,6 @@ body {
 #notif {
 	position: fixed;
 	height: 30px;
-	background: green;
 	color: #fff;
 	bottom: 0;
 	min-width: 100px;
@@ -50,6 +49,9 @@ body {
 	padding: 0 10px;
 	display: none;
 }
+
+	.success { background: green; }
+	.failure { background: red; }
 
 pre {
 	color: blue;

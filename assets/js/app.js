@@ -127,6 +127,7 @@ function attack(){
 		if (w.currentEnemy.hth <= 0){ 
 			w.currentEnemy.lost = true;
 			button_attack.disabled = true;
+			foe_hth_ind.style.width = 0;
 		}
 	}
 	console.log(w.currentEnemy.hth, w.currentEnemy.lost);
@@ -141,8 +142,9 @@ function displayLevel(){
 	level.innerHTML = "Level <br />" + get("lvl");
 }
 
-function displayNotif(info){
+function displayNotif(info, type){
 	notif.textContent = info;
+	notif.className = type || "success";
 	notif.style.display = "block";
 	setTimeout(function(){ notif.style.display = "none"; }, 5000);
 }
@@ -160,7 +162,7 @@ function displayEnemy(foe){
 }
 
 function displayEnemyHth(){
-	$("#foe_hth_ind").style.width = ((w.currentEnemy.hth * 100) / enemies[w.currentEnemy.foe]) + "%";
+	foe_hth_ind.style.width = ((w.currentEnemy.hth * 100) / enemies[w.currentEnemy.foe]) + "%";
 }
 
 function displayInventory(){
@@ -245,9 +247,9 @@ function count(){
 				checkCheckpoints();
 				break;
 			case "hth":
-				if (value.between(0, 33)){ $("#hth_ind").style.backgroundColor = "red"; }
-				if (value.between(33, 66)){ $("#hth_ind").style.backgroundColor = "orange"; }
-				if (value.between(66, 100)){ $("#hth_ind").style.backgroundColor = "green"; }
+				if (value.between(0, 33)){ hth_ind.style.backgroundColor = "red"; }
+				if (value.between(33, 66)){ hth_ind.style.backgroundColor = "orange"; }
+				if (value.between(66, 100)){ hth_ind.style.backgroundColor = "green"; }
 				break;
 		}
     }
