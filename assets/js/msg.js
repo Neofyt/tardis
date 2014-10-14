@@ -16,7 +16,7 @@ var messages = {
 		notEnoughJB: "Pas assez de jelly beans pour {0}",
 		levelUp: "Vous êtes passé au niveau {0} !!",
 		planets: {
-			foe: "You have just encountered some {0} !!"
+			foe: "Vous venez de rencontrer des {0} !!"
 		}
 	},
 	en: {

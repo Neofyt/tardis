@@ -154,7 +154,7 @@ function displayEnemy(foe){
 	enemy_hth.style.display = "block";
 
 	w.currentEnemy.foe = foe;
-	w.currentEnemy.hth = enemies[foe];
+	w.currentEnemy.hth = enemies[foe].hth;
 	w.currentEnemy.lost = false;
 
 	button_attack.disabled = false;
@@ -162,7 +162,7 @@ function displayEnemy(foe){
 }
 
 function displayEnemyHth(){
-	foe_hth_ind.style.width = ((w.currentEnemy.hth * 100) / enemies[w.currentEnemy.foe]) + "%";
+	foe_hth_ind.style.width = ((w.currentEnemy.hth * 100) / enemies[w.currentEnemy.foe].hth) + "%";
 }
 
 function displayInventory(){
