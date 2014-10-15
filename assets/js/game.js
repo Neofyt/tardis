@@ -16,7 +16,8 @@ var StorageName = "Doctor",
 	},
 	action = {
 		1: function(){ obtain("tardis", 1); },
-		2: function(f){ buy("cristal", f); }
+		2: function(f){ buy("cristal", f); },
+		3: function(){ reset(); }
 	},
 	enemies = {
 		cyberman: {hth: 100, atk: 1, def: 1},

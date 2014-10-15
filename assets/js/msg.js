@@ -17,7 +17,13 @@ var messages = {
 		levelUp: "Vous êtes passé au niveau {0} !!",
 		planets: {
 			foe: "Vous venez de rencontrer des {0} !!"
-		}
+		},
+		enemies: {
+			hitback: "Le {0} riposte !!",
+			defeated: "Vous avez battu le {0} !!"
+		},
+		lost: "Vous avez perdu...",
+		tryAgain: "Voulez-vous recommencer ?"
 	},
 	en: {
 		welcome: "Welcome {0} !!",
@@ -37,6 +43,12 @@ var messages = {
 		levelUp :"You are now level {0} !!",
 		planets: {
 			foe: "You have just encountered some {0} !!"
-		}
+		},
+		enemies: {
+			hitback: "The {0} hits back !!",
+			defeated: "You have defeated the {0} !!"
+		},
+		lost: "You have lost...",
+		tryAgain: "Do you want to start over ?"
 	}
 };

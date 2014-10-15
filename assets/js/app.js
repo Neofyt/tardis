@@ -122,17 +122,33 @@ function levelUp(){
 
 function attack(){
 	if (!w.currentEnemy.lost){
-		w.currentEnemy.hth = w.currentEnemy.hth - (10 * get("atk"));
+		w.currentEnemy.hth = w.currentEnemy.hth - Math.floor((Math.random() * (10 * get("atk")) + 1));
 		displayEnemyHth();
 		if (w.currentEnemy.hth <= 0){ 
 			w.currentEnemy.lost = true;
 			button_attack.disabled = true;
 			foe_hth_ind.style.width = 0;
+			displayNotif(msg.enemies.hitback.format(w.currentEnemy.foe));
+		} else {
+			hitback();
 		}
 	}
 	console.log(w.currentEnemy.hth, w.currentEnemy.lost);
 }
 
+function hitback(){
+	_sub("hth", Math.floor((Math.random() * (10 * get("atk") * get("lvl")) + 1)));
+	displayNotif(msg.enemies.hitback.format(w.currentEnemy.foe), "failure", 1000);
+	count("hth");
+	if(get("hth") <= 0){
+		displayNotif(msg.lost, "failure", 5000);
+		startOver();
+	}
+}
+
+function startOver(){
+	body.innerHTML = msg.lost + "\n" + msg.tryAgain + " " + tpl.action.format(3, "Yes");
+}
 
 // ============
 // DISPLAY
@@ -142,11 +158,11 @@ function displayLevel(){
 	level.innerHTML = "Level <br />" + get("lvl");
 }
 
-function displayNotif(info, type){
+function displayNotif(info, type, duration){
 	notif.textContent = info;
 	notif.className = type || "success";
 	notif.style.display = "block";
-	setTimeout(function(){ notif.style.display = "none"; }, 5000);
+	setTimeout(function(){ if(notif){ notif.style.display = "none";} }, duration || 5000);
 }
 
 function displayEnemy(foe){
