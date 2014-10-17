@@ -243,6 +243,12 @@ function obtain(what, n){
 	}
 }
 
+function eat(n){
+	if (sub("jb", n) !== 0){
+		sub("jb", n);
+		add("hth", n);
+	}
+}
 
 // ============
 // OTHER

@@ -1,6 +1,6 @@
 var dialogs = {
-	"Hearth": {
-		1: "You've just landed on Hearth."
+	"Earth": {
+		1: "You've just landed on Earth."
 	},
 	"Trenzalore": {
 		1: "You've just arrived on the fields of Trenzalore."

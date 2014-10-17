@@ -23,7 +23,12 @@ var messages = {
 			defeated: "Vous avez battu le {0} !!"
 		},
 		lost: "Vous avez perdu...",
-		tryAgain: "Voulez-vous recommencer ?"
+		tryAgain: "Voulez-vous recommencer ?",
+		arrival: [
+			"You've landed on {0}.",
+			"You've arrived on {0}.",
+			"Welcome to {0}"
+		]
 	},
 	en: {
 		welcome: "Welcome {0} !!",
@@ -49,6 +54,11 @@ var messages = {
 			defeated: "You have defeated the {0} !!"
 		},
 		lost: "You have lost...",
-		tryAgain: "Do you want to start over ?"
+		tryAgain: "Do you want to start over ?",
+		arrival: [
+			"You've landed on {0}.",
+			"You've arrived on {0}.",
+			"Welcome to {0}"
+		]
 	}
 };

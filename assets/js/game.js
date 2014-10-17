@@ -5,7 +5,7 @@ var StorageName = "Doctor",
 		hth: [100,200,400,800,1600,3200,6400,12800],
 		atk: [1.2,1.4,1.6,1.8,2,2.2,2.4,2.6]
 	},
-	planets = ["Hearth","Trenzalore","Gallifrey","Skaro"],
+	planets = ["Earth","Trenzalore","Gallifrey","Skaro"],
 	prices = {
 		cristal: 256
 	},
@@ -17,7 +17,8 @@ var StorageName = "Doctor",
 	action = {
 		1: function(){ obtain("tardis", 1); },
 		2: function(f){ buy("cristal", f); },
-		3: function(){ reset(); }
+		3: function(){ reset(); },
+		4: function(){ eat(10); }
 	},
 	enemies = {
 		cyberman: {hth: 100, atk: 1, def: 1},
